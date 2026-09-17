@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Polyfill/Shim to ensure window.fetch is writable and configurable
+      (function() {
+        try {
+          var origFetch = window.fetch;
+          var curFetch = origFetch ? origFetch.bind(window) : null;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return curFetch;
+            },
+            set: function(fn) {
+              curFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          try {
+            var proto = Object.getPrototypeOf(window);
+            if (proto) {
+              var d = Object.getOwnPropertyDescriptor(proto, 'fetch');
+              if (d && !d.set) {
+                var protoFetch = window.fetch ? window.fetch.bind(window) : null;
+                Object.defineProperty(proto, 'fetch', {
+                  get: function() { return protoFetch; },
+                  set: function(v) { protoFetch = v; },
+                  configurable: true,
+                  enumerable: true
+                });
+              }
+            }
+          } catch (err) {}
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campamentos Transitorios Deportivos | Ministerio del Deporte</title>
+    <meta name="description" content="Sistema oficial del Ministerio del Poder Popular para el Deporte para la gestión integral, censo familiar, perfilamiento deportivo, logística y protección de NNA en campamentos transitorios." />
+    <meta property="og:title" content="Campamentos Transitorios Deportivos | Ministerio del Deporte" />
+    <meta property="og:description" content="Sistema oficial del Ministerio del Poder Popular para el Deporte para la gestión integral, censo familiar, perfilamiento deportivo, logística y protección de NNA en campamentos transitorios." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

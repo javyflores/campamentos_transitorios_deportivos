@@ -1,0 +1,330 @@
+================================================================================
+REPÚBLICA BOLIVARIANA DE VENEZUELA
+MINISTERIO DEL PODER POPULAR PARA EL DEPORTE
+================================================================================
+
+DOCUMENTO OFICIAL: DICTAMEN TÉCNICO Y MEMORIA DE ARQUITECTURA DE SOFTWARE
+FECHA DE EMISIÓN: 17 DE SEPTIEMBRE DE 2026
+DESTINATARIO: DESPACHO DEL MINISTRO
+REMITENTE: ING. JAVIER FLORES & LÍDER TÉCNICO DE SISTEMAS
+ASUNTO: PRESENTACIÓN FORMAL, ANÁLISIS ARQUITECTÓNICO Y GUÍA DE IMPLEMENTACIÓN
+DEL SISTEMA «CAMPAMENTOS TRANSITORIOS DEPORTIVOS» (VERSIÓN 1.0.0-PROD)
+CLASIFICACIÓN DE SEGURIDAD: DOCUMENTO TÉCNICO INSTITUCIONAL - USO OFICIAL EXCLUSIVO
+
+================================================================================
+1. RESUMEN EJECUTIVO Y PRESENTACIÓN DEL INGENIERO
+================================================================================
+
+En mi carácter de Desarrollador de Software, presento ante la alta 
+dirección del Ministerio del Poder Popular para el Deporte el informe técnico 
+definitivo correspondiente al desarrollo, validación y empaquetamiento del 
+Sistema «Campamentos Transitorios Deportivos».
+
+Este desarrollo responde a la necesidad imperiosa de dotar al Estado venezolano 
+de una plataforma digital de respuesta rápida, resiliente y de alta precisión 
+diseñada para coordinar de forma unificada la acogida temporal de núcleos 
+familiares en infraestructuras ubicadas en el eje estratégico La Guaira, Distrito 
+Capital, Miranda y Aragua.
+
+La plataforma trasciende el concepto tradicional de un censo de emergencia al 
+incorporar dos pilares de vanguardia tecnológica:
+1. Una visión de captación y rescate de talento deportivo que evalúa parámetros 
+   biomecánicos, marcas atléticas y balance calórico en medio de contingencias.
+2. Un blindaje legal y criptográfico sin precedentes que garantiza el 
+   cumplimiento estricto del Artículo 65 de la Ley Orgánica para la Protección 
+   de Niños, Niñas y Adolescentes (LOPNNA), evitando cualquier exposición indebida 
+   de la identidad de menores albergados.
+
+================================================================================
+2. DIAGNÓSTICO OPERATIVO Y JUSTIFICACIÓN INSTITUCIONAL
+================================================================================
+
+Durante contingencias hidrometeorológicas o eventos de reubicación temporal,
+el Ministerio del Poder Popular para la Educación y las gobernaciones
+habilitan recintos educativos para brindar abrigo. 
+Históricamente, estos procesos enfrentaban serias deficiencias operativas:
+- Uso de cuadernos y listas manuales con riesgo de extravío y duplicidad.
+- Desconocimiento del aforo en tiempo real (porcentaje de ocupación de camas).
+- Ausencia de control en la dotación de insumos médicos y deportivos.
+- Dificultades de verificación de identidad de los trasladados en vehículos.
+- Exposición pública involuntaria de listas de niños albergados, en flagrante 
+  violación del ordenamiento jurídico venezolano.
+
+El presente sistema resuelve de raíz estas vulnerabilidades mediante un diseño 
+desacoplado, 100% interoperable, con capacidades de operación sin internet 
+(Offline-First) y sincronización con salas situacionales ministeriales.
+
+================================================================================
+3. FUNDAMENTACIÓN JURÍDICA Y PRINCIPIO DE RESERVA LEGAL (LOPNNA ART. 65)
+================================================================================
+
+El diseño de esta arquitectura se fundamenta en los siguientes preceptos de la 
+República Bolivariana de Venezuela:
+
+A. ARTÍCULO 65 DE LA LOPNNA (DERECHO AL HONOR, REPUTACIÓN, PROPIA IMAGEN Y PRIVACIDAD):
+   "Está prohibido exponer o divulgar, a través de cualquier medio, la identidad 
+   de los niños, niñas y adolescentes cuando se les mencione directa o indirectamente 
+   en relación con hechos delictivos, situaciones de extrema vulnerabilidad social 
+   o estados de necesidad."
+   
+   *Implementación Técnica en el Sistema:*
+   El software cuenta con un motor nativo de anonimización y ofuscación de nombres 
+   a nivel de presentación, reportes, carnets e impresiones. Para cualquier usuario 
+   cuyo rol no sea de "Administrador General" o "Protección NNA", el sistema oculta 
+   el nombre real del menor sustituyéndolo por un formato sintético protegido:
+   Ejemplo: "Keiber José Mendoza (16 años)" se transforma automáticamente en:
+   "K*** J*** M*** (Menor Bajo Custodia LOPNNA)".
+
+B. ARTÍCULOS 28 Y 60 DE LA CONSTITUCIÓN DE LA REPÚBLICA BOLIVARIANA DE VENEZUELA:
+   Garantía de Habeas Data, reserva del secreto de las comunicaciones y protección 
+   del honor y la vida privada de los ciudadanos censados.
+
+C. CÓDIGO PENAL Y LEY ESPECIAL CONTRA DELITOS INFORMÁTICOS:
+   Registro de bitácoras de auditoría y prohibición de extracción no autorizada de 
+   datos biométricos.
+
+================================================================================
+4. ARQUITECTURA DE SOFTWARE Y PILA TECNOLÓGICA IMPLEMENTADA
+================================================================================
+
+La plataforma fue desarrollada siguiendo estándares de ingeniería de software 
+de clase internacional, garantizando modularidad, mantenibilidad y rendimiento:
+
+- CAPA DE PRESENTACIÓN (FRONTEND):
+  * React 18: Renderizado eficiente mediante Virtual DOM y componentes funcionales.
+  * TypeScript 5: Tipado estático riguroso que elimina errores en tiempo de ejecución.
+  * Tailwind CSS 4: Sistema de diseño atómico y paleta cromática de alta legibilidad, 
+    respetando los colores institucionales (Azul Patriota #002045, Rojo Federativo, 
+    Amarillo Oro y Verde Esperanza).
+  * Lucide React: Iconografía vectorial accesible y estandarizada.
+  * React Markdown: Renderizado estructurado de informes emitidos por el Asistente IA.
+
+- CAPA DE SERVIDOR Y SEGURIDAD DE PROXY (BACKEND):
+  * Node.js + Express: Servidor de alto rendimiento que actúa como pasarela segura.
+  * Aislamiento de Secretos: La clave API de Gemini y las credenciales permanecen 
+    exclusivamente en variables de entorno del servidor (`process.env.GEMINI_API_KEY`). 
+    El navegador web jamás tiene acceso a credenciales maestras.
+  * Empaquetado esbuild: El backend se compila hacia un artefacto único CommonJS 
+    (`dist/server.cjs`) que optimiza los tiempos de arranque en contenedores Docker 
+    y Google Cloud Run.
+
+- MOTOR DE INTELIGENCIA ARTIFICIAL GENERATIVA:
+  * Google Gen AI SDK (`@google/genai`): Integración del modelo Gemini 3.8 Flash, 
+    calibrado con temperatura de 0.2 para respuestas técnicas, precisas y veraces.
+  * Inyección Contextual: El asistente recibe el estado operativo consolidado de 
+    los 8 campamentos (camas, alertas médicas, atletas y flota) para emitir 
+    respuestas fundamentadas en datos reales.
+
+- CRIPTOGRAFÍA Y VALIDACIÓN EN PUNTOS DE CONTROL:
+  * Algoritmo SHA-256: Cada carnet (Camp-Cédula) y Acta Oficial cuenta con un hash 
+    criptográfico de 16 caracteres hexadecimales para verificación física en alcabalas 
+    sin depender de conexión a servidores centrales.
+
+================================================================================
+5. MÓDULOS FUNCIONALES DESARROLLADOS
+================================================================================
+
+La solución consta de 9 módulos estratégicos interconectados:
+
+1. DASHBOARD GENERAL DE AFORO Y OCUPACIÓN:
+   Monitoreo en vivo de los 8 campamentos regionales. Métricas consolidadas de 
+   camas instaladas (1.040), camas ocupadas (776), plazas libres (264) y alertas 
+   de saturación (>80% de ocupación). Filtros por estado (La Guaira, Caracas, 
+   Miranda, Aragua).
+
+2. CENSO FAMILIAR Y RESGUARDO LOPNNA:
+   Registro de núcleos familiares, jefes de hogar, número de integrantes y NNA. 
+   Identificación de alertas de riesgo de terreno (deslizamiento, quebrada), 
+   condición de vulnerabilidad médica y código de asignación de vivienda.
+
+3. FICHA ÚNICA DEPORTIVA, BIOMECÁNICA Y NUTRICIÓN:
+   Evaluación antropométrica completa: Estatura, peso, cálculo automático del 
+   Índice de Masa Corporal (IMC) y categorización OMS (Bajo peso, Normal, Sobrepeso). 
+   Registro de marcas deportivas (ej. velocidad 10.65s en 100m) y cálculo automático 
+   del gasto calórico diario recomendado (kcal/día) para el equipo de comedores.
+
+4. CAMP-CÉDULA DEPORTIVA (CARNET DIGITAL INTEROPERABLE):
+   Carnet oficial con cintillo tricolor, datos de la sede, código QR de verificación 
+   rápida y firma criptográfica SHA-256. Permite carrusel interactivo por familia e 
+   impresión masiva para plastificación.
+
+5. TRIAJE MÉDICO Y FARMACIA DE EMERGENCIA:
+   Inventario de medicamentos esenciales (analgésicos, antipiréticos, antibióticos, 
+   sueros orales) con alertas de reposición inmediata y registro clínico de 
+   patologías crónicas (asma, hipertensión, diabetes).
+
+6. ALMACÉN CENTRAL E INVENTARIO DEPORTIVO:
+   Control de dotación de balones (fútbol, baloncesto, voleibol), kits de entrenamiento, 
+   uniformes tricolor y material desplegado en cancha vs. disponible en depósito.
+
+7. RUTAS DE TRANSPORTE Y CONVOYES YUTONG:
+   Seguimiento de flota en carretera en alianza con SITSSA y MppTransporte. Manifiesto 
+   de abordaje nominal con número de asiento y check-in en rampa. Soporte para 
+   despacho del manifiesto vial directamente al conductor vía WhatsApp.
+
+8. REPORTES OFICIALES, CERTIFICACIONES Y VALIDADOR QR:
+   Generación de Actas de Censo, Certificaciones de Talento Deportivo y Carnets de 
+   Evacuación con sellos institucionales. Validador integrado de códigos QR mediante 
+   cámara o ingreso de hash para auditar autenticidad de documentos.
+
+9. ASISTENTE VIRTUAL DE INTELIGENCIA OPERATIVA (GEMINI 3.8 FLASH):
+   Interfaz conversacional técnica adaptada al rol en sesión. Responde consultas 
+   complejas sobre aforos, traslados, requerimientos nutricionales y casos de 
+   protección NNA. Incluye exportación a WhatsApp y descarga de minutas en Markdown.
+
+================================================================================
+6. MODELO DE SEGURIDAD BASADO EN ROLES (RBAC)
+================================================================================
+
+El sistema implementa 6 perfiles con permisos granulares:
+
+- ADMINISTRADOR GENERAL (MINISTRO / DIRECTOR):
+  Acceso total a todos los módulos, edición de censos, gestión de flota, reportes 
+  completos y visualización de identidades de NNA.
+
+- DEFENSORÍA / PROTECCIÓN NNA (CONSEJO DE DERECHOS):
+  Acceso privilegiado a datos médicos, familiares e identidades de NNA para 
+  emisión de medidas de protección integral.
+
+- CUERPO TÉCNICO / ENTRENADOR (IND / FEDERACIONES):
+  Enfocado en Fichas Deportivas, marcas atléticas y nutrición. Nombres de menores 
+  aparecen ofuscados automáticamente.
+
+- COORDINADOR DE LOGÍSTICA:
+  Gestión de Almacén Central, suministros, dotaciones y rutas de convoyes Yutong. 
+  Datos sensibles de menores ofuscados.
+
+- CONSULTOR INSTITUCIONAL / ANALISTA DE DATOS:
+  Acceso de solo lectura a tableros estadísticos y métricas agregadas para salas 
+  situacionales, con protección absoluta de identidad.
+
+================================================================================
+7. FACTORES DE INNOVACIÓN TECNOLÓGICA
+================================================================================
+
+1. ARQUITECTURA RESILIENTE ANTE CONTINGENCIAS (OFFLINE-FIRST):
+   En zonas de desastre con corte de fluido eléctrico o pérdida de fibra óptica, 
+   la plataforma continúa operando en computadoras portátiles o tabletas, 
+   almacenando altas y modificaciones localmente para posterior consolidación.
+
+2. CÓDIGO QR CON VERIFICACIÓN CRIPTOGRÁFICA OFFLINE:
+   Permite a funcionarios militares o de la PNB escanear el carnet en puntos de 
+   control y verificar de inmediato el nombre del jefe de familia y la sede de 
+   origen sin necesidad de tener acceso a bases de datos remotas.
+
+3. DESPACHO INMEDIATO DE SITREPS POR WHATSAPP:
+   Integración de plantillas URI codificadas que permiten a coordinadores de sede 
+   enviar resúmenes de aforo, fichas médicas de emergencia o manifiestos de 
+   transporte a los grupos de mando ministerial con un solo clic.
+
+================================================================================
+8. PROCEDIMIENTO DE IMPLEMENTACIÓN Y DESPLIEGUE MINISTERIAL
+================================================================================
+
+Para instalar y poner en producción la plataforma en la infraestructura del 
+Ministerio, se deben seguir los siguientes pasos:
+
+PASO 1: REQUISITOS DEL SERVIDOR INSTITUCIONAL
+- Sistema Operativo: Ubuntu Server 22.04 LTS o Debian 12 (recomendado).
+- Procesador: 2 Cores o superior.
+- Memoria RAM: 4 GB mínimo (8 GB recomendados para alta concurrencia).
+- Almacenamiento: 20 GB SSD.
+- Software Base: Node.js versión 20.x LTS, NPM versión 10.x, Git.
+
+PASO 2: DESCARGA DEL REPOSITORIO Y PREPARACIÓN DE ENTORNO
+```bash
+# 1. Clonar el repositorio oficial
+git clone https://github.com/mindeporte-venezuela/campamentos-deportivos.git
+cd campamentos-deportivos
+
+# 2. Instalar dependencias del sistema
+npm install
+
+# 3. Configurar variables de entorno
+cp .env.example .env
+nano .env
+```
+Contenido del archivo `.env`:
+```env
+GEMINI_API_KEY="AIzaSyTuClaveOficialDeGeminiAqui"
+PORT=3000
+NODE_ENV=production
+```
+
+PASO 3: COMPILACIÓN Y LANZAMIENTO EN PRODUCCIÓN
+```bash
+# 1. Ejecutar compilación del frontend y bundle de Express
+npm run build
+
+# 2. Instalar gestor de procesos persistente (PM2)
+sudo npm install -g pm2
+
+# 3. Iniciar el servicio bajo supervisión de PM2
+pm2 start dist/server.cjs --name "mindeporte-campamentos"
+
+# 4. Configurar arranque automático tras reinicio del servidor
+pm2 startup
+pm2 save
+```
+
+PASO 4: CONFIGURACIÓN DE PROXY INVERSO NGINX Y CERTIFICADO SSL (HTTPS)
+Se debe habilitar Nginx como terminador SSL (puerto 443) redirigiendo el tráfico 
+interno al puerto 3000:
+```nginx
+server {
+    listen 80;
+    server_name campamentos.mindeporte.gob.ve;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name campamentos.mindeporte.gob.ve;
+
+    ssl_certificate /etc/ssl/certs/mindeporte_cert.crt;
+    ssl_certificate_key /etc/ssl/private/mindeporte_key.key;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
+================================================================================
+9. PLAN DE ESCALABILIDAD Y SINCRONIZACIÓN CENTRAL
+================================================================================
+
+- SINCRONIZACIÓN CON GOOGLE SHEETS:
+  El sistema incluye exportador CSV estructurado compatible al 100% con hojas de 
+  cálculo de Google Drive para mesas de trabajo interministeriales.
+  
+- SINCRONIZACIÓN CON FIRESTORE / POSTGRESQL:
+  El diseño de interfaces (`src/types.ts`) y adaptadores en `src/lib/db.ts` 
+  garantiza compatibilidad directa para activar réplicas distribuidas en Google 
+  Cloud Firestore o bases de datos relacionales PostgreSQL del MinDeporte.
+
+================================================================================
+10. CONCLUSIONES Y RECOMENDACIONES DEL INGENIERO
+================================================================================
+
+1. El software desarrollado cumple a cabalidad con la totalidad de los 
+   requerimientos técnicos, operativos y de diseño formulados por el Ministerio.
+2. El mecanismo de anonimización de NNA coloca al Ministerio del Deporte a la 
+   vanguardia del cumplimiento de la LOPNNA en plataformas digitales públicas.
+3. Se recomienda realizar una jornada de inducción técnica a los coordinadores 
+   de los campamentos transitorios para la asignación formal de roles y credenciales.
+4. La solución se entrega lista para su pase formal a producción, auditoría de 
+   código y puesta en marcha inmediata.
+
+--------------------------------------------------------------------------------
+Dictamen emitido y suscrito en la ciudad de Caracas, a los 17 días del mes 
+de septiembre de 2026.
+
+ING. JAVIER FLORES
+REPÚBLICA BOLIVARIANA DE VENEZUELA
+================================================================================

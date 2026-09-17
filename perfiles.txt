@@ -1,0 +1,88 @@
+================================================================================
+MINISTERIO DEL PODER POPULAR PARA EL DEPORTE - REPÚBLICA BOLIVARIANA DE VENEZUELA
+SISTEMA «CAMPAMENTOS TRANSITORIOS DEPORTIVOS»
+REGISTRO OFICIAL DE CREDENCIALES Y PERFILES INSTITUCIONALES (RBAC)
+================================================================================
+
+DOCUMENTO CONFIDENCIAL - USO INTERNO EXCLUSIVO DE AUTORIDADES Y ADMINISTRADORES
+
+--------------------------------------------------------------------------------
+1. PERFIL: ADMINISTRADOR GENERAL
+--------------------------------------------------------------------------------
+Nombre: Prof. Carlos Mendoza
+Cargo: Director General de Operaciones y Seguimiento Estratégico
+Institución: Ministerio del Deporte - Viceministerio de Alto Rendimiento
+Correo Electrónico: carlos.mendoza@mindeporte.gob.ve
+Contraseña: Password123!
+Rol en Sistema: Administrador
+Nivel de Acceso: Total (Creación, modificación, auditoría, exportación, eliminación)
+Ámbito Geográfico: Nacional (La Guaira, Caracas, Miranda, Aragua - 106 campamentos)
+
+--------------------------------------------------------------------------------
+2. PERFIL: PROTECCIÓN NNA (DEFENSORÍA / LOPNNA)
+--------------------------------------------------------------------------------
+Nombre: Dra. Elena Quintero
+Cargo: Defensora Especial para la Protección de Niños, Niñas y Adolescentes
+Institución: Consejo de Protección NNA / Defensoría Nacional
+Correo Electrónico: elena.quintero@mindeporte.gob.ve
+Contraseña: Password123!
+Rol en Sistema: Proteccion_NNA
+Nivel de Acceso: Desofuscación legal de datos confidenciales bajo Art. 65 LOPNNA.
+                 Acceso a condiciones médicas, patologías, medicamentos y banderas
+                 de riesgo de NNA. Edición de notas de protección.
+
+--------------------------------------------------------------------------------
+3. PERFIL: ENTRENADOR / EVALUADOR DEPORTIVO
+--------------------------------------------------------------------------------
+Nombre: Lic. Mariángel Rivas
+Cargo: Metodóloga y Evaluadora de Talento Deportivo
+Institución: Instituto Nacional de Deportes (IND) - Unidad Técnica Metodológica
+Correo Electrónico: mariangel.rivas@mindeporte.gob.ve
+Contraseña: Password123!
+Rol en Sistema: Entrenador
+Nivel de Acceso: Evaluación biométrica, cálculo de IMC, requerimiento calórico,
+                 asignación de aptitud deportiva y registro de talentos destacados.
+
+--------------------------------------------------------------------------------
+4. PERFIL: COORDINADOR DE LOGÍSTICA E INVENTARIO
+--------------------------------------------------------------------------------
+Nombre: Técnico José Alfonzo
+Cargo: Jefe de Logística, Suministros y Movilidad
+Institución: Dirección de Logística, Almacén e Inventarios Deportivos
+Correo Electrónico: jose.alfonzo@mindeporte.gob.ve
+Contraseña: Password123!
+Rol en Sistema: Logistica
+Nivel de Acceso: Control de inventario (balones, uniformes, kits, cronómetros),
+                 asignación de recursos a campamentos y gestión de rutas Yutong.
+
+--------------------------------------------------------------------------------
+5. PERFIL: ANALISTA DE DATOS Y CENSOS
+--------------------------------------------------------------------------------
+Nombre: Ing. David Sulbarán
+Cargo: Analista de Sistemas y Estadísticas Censales
+Institución: Oficina de Tecnologías de Información y Censos
+Correo Electrónico: david.sulbaran@mindeporte.gob.ve
+Contraseña: Password123!
+Rol en Sistema: Analista
+Nivel de Acceso: Carga y verificación de núcleos familiares, estatus habitacional,
+                 asignación de camas y dormitorios, actualización de cédulas de sede.
+
+--------------------------------------------------------------------------------
+6. PERFIL: AUDITOR / CONSULTOR EXTERNO
+--------------------------------------------------------------------------------
+Nombre: Lic. Carmen Bastidas
+Cargo: Inspectora de Seguimiento Presidencial y Auditoría
+Institución: Auditoría Interna y Seguimiento Presidencial
+Correo Electrónico: carmen.bastidas@mindeporte.gob.ve
+Contraseña: Password123!
+Rol en Sistema: Consultor
+Nivel de Acceso: Consulta y generación de reportes ejecutivos consolidados (Solo Lectura).
+                 Sin permisos de mutación sobre registros censales o inventarios.
+
+================================================================================
+REGLAS DE SEGURIDAD Y CUMPLIMIENTO:
+- Todo acceso queda registrado en los logs de auditoría del sistema.
+- La divulgación de datos de NNA a terceros no autorizados acarrea sanciones
+  según los artículos 65 y 226 de la Ley Orgánica para la Protección de Niños,
+  Niñas y Adolescentes (LOPNNA).
+================================================================================

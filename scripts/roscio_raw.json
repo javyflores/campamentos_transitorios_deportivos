@@ -1,0 +1,51 @@
+{
+  "families": [
+    { "id": "roscio-fam-1", "name": "Familia Belisario", "location": "Pabellón A - Aula 2", "obsGeneral": "Censo unificado. Jefe de familia: RICARDO BELISARIO. Procedencia de origen: Caraballeda.", "address": "Caraballeda, Sector El Tanque", "communityName": "Caraballeda El Tanque", "parish": "Caraballeda", "housingType": "Casa", "terrainCondition": "Alto Riesgo", "members": [
+      { "id": "roscio-mem-1-1", "name": "RICARDO BELISARIO", "age": 55, "sex": "M", "pathology": "Hipertensión Arterial", "flag": "warning", "relationship": "Jefe de Familia", "healthGroup": "Grupo III", "bedNumber": "12", "phone": "0414-8027469", "dni": "12970524", "medicinesNeeded": "Losartán Potásico 50mg" },
+      { "id": "roscio-mem-1-2", "name": "MARIA DE BELISARIO", "age": 50, "sex": "F", "pathology": "Ninguna", "flag": "normal", "relationship": "Cónyuge", "healthGroup": "Grupo I", "bedNumber": "13", "dni": "14120300" }
+    ]},
+    { "id": "roscio-fam-2", "name": "Familia Colina", "location": "Pabellón A - Aula 2", "obsGeneral": "Censo unificado. Jefe de familia: ROBERTO COLINA.", "address": "Catia La Mar, La Lucha", "communityName": "La Lucha", "parish": "Catia La Mar", "housingType": "Casa", "terrainCondition": "Alto Riesgo", "members": [
+      { "id": "roscio-mem-2-1", "name": "ROBERTO COLINA", "age": 42, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Jefe de Familia", "healthGroup": "Grupo I", "bedNumber": "14", "phone": "0412-5551234", "dni": "16450123" },
+      { "id": "roscio-mem-2-2", "name": "ANA KARINA COLINA", "age": 14, "sex": "F", "pathology": "Asma Bronquial Leve", "flag": "warning", "relationship": "Hija", "healthGroup": "Grupo II", "bedNumber": "15", "dni": "V-34500123", "medicinesNeeded": "Salbutamol Inhalador" },
+      { "id": "roscio-mem-2-3", "name": "ROBERTO JOSE COLINA", "age": 10, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Hijo", "healthGroup": "Grupo I", "bedNumber": "16" }
+    ]},
+    { "id": "roscio-fam-3", "name": "Familia Mendoza", "location": "Pabellón A - Aula 3", "obsGeneral": "Censo unificado. Jefe de familia: CARMEN MENDOZA.", "address": "Maiquetía, El Rincón", "communityName": "El Rincón", "parish": "Maiquetía", "housingType": "Casa", "terrainCondition": "Riesgo Mitigable", "members": [
+      { "id": "roscio-mem-3-1", "name": "CARMEN MENDOZA", "age": 63, "sex": "F", "pathology": "Diabetes Mellitus Tipo 2 / HTA", "flag": "warning", "relationship": "Jefe de Familia", "healthGroup": "Grupo III", "bedNumber": "21", "phone": "0426-3334567", "dni": "8745120", "medicinesNeeded": "Metformina 500mg, Enalapril 10mg" },
+      { "id": "roscio-mem-3-2", "name": "YULIMAR MENDOZA", "age": 31, "sex": "F", "pathology": "Ninguna", "flag": "normal", "relationship": "Hija", "healthGroup": "Grupo I", "bedNumber": "22", "dni": "23145678" },
+      { "id": "roscio-mem-3-3", "name": "DYLAN MENDOZA", "age": 6, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Nieto", "healthGroup": "Grupo I", "bedNumber": "23" }
+    ]},
+    { "id": "roscio-fam-4", "name": "Familia Salazar", "location": "Pabellón A - Aula 3", "obsGeneral": "Jefe de familia: HECTOR SALAZAR. Zona Macuto.", "address": "Macuto, Sector La Veguita", "communityName": "La Veguita", "parish": "Macuto", "housingType": "Casa", "terrainCondition": "Alto Riesgo", "members": [
+      { "id": "roscio-mem-4-1", "name": "HECTOR SALAZAR", "age": 39, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Jefe de Familia", "healthGroup": "Grupo I", "bedNumber": "24", "phone": "0414-9988776", "dni": "18900456" },
+      { "id": "roscio-mem-4-2", "name": "GLADYS DE SALAZAR", "age": 36, "sex": "F", "pathology": "Ninguna", "flag": "normal", "relationship": "Cónyuge", "healthGroup": "Grupo I", "bedNumber": "25", "dni": "19456789" },
+      { "id": "roscio-mem-4-3", "name": "HECTOR DAVID SALAZAR", "age": 12, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Hijo", "healthGroup": "Grupo I", "bedNumber": "26" },
+      { "id": "roscio-mem-4-4", "name": "VALERIA SALAZAR", "age": 8, "sex": "F", "pathology": "Ninguna", "flag": "normal", "relationship": "Hija", "healthGroup": "Grupo I", "bedNumber": "27" }
+    ]},
+    { "id": "roscio-fam-5", "name": "Familia Gutierrez", "location": "Pabellón B - Aula 1", "obsGeneral": "Jefe de familia: PEDRO GUTIERREZ. Procedencia Naiguatá.", "address": "Naiguatá, Pueblo Arriba", "communityName": "Pueblo Arriba", "parish": "Naiguatá", "housingType": "Casa", "terrainCondition": "Alto Riesgo", "members": [
+      { "id": "roscio-mem-5-1", "name": "PEDRO GUTIERREZ", "age": 48, "sex": "M", "pathology": "Lumbalgia Mecánica Crónica", "flag": "normal", "relationship": "Jefe de Familia", "healthGroup": "Grupo II", "bedNumber": "31", "phone": "0416-7788990", "dni": "15123987" },
+      { "id": "roscio-mem-5-2", "name": "MARISELA GUTIERREZ", "age": 44, "sex": "F", "pathology": "Ninguna", "flag": "normal", "relationship": "Cónyuge", "healthGroup": "Grupo I", "bedNumber": "32", "dni": "16789012" },
+      { "id": "roscio-mem-5-3", "name": "JESUS GUTIERREZ", "age": 17, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Hijo", "healthGroup": "Grupo I", "bedNumber": "33", "dni": "32145678" }
+    ]},
+    { "id": "roscio-fam-6", "name": "Familia Paredes", "location": "Pabellón B - Aula 1", "obsGeneral": "Jefe de familia: LUISANA PAREDES. Gestante 32 semanas.", "address": "Catia La Mar, Ezequiel Zamora", "communityName": "Ezequiel Zamora", "parish": "Catia La Mar", "housingType": "Casa", "terrainCondition": "Alto Riesgo", "members": [
+      { "id": "roscio-mem-6-1", "name": "LUISANA PAREDES", "age": 24, "sex": "F", "pathology": "Gestación 32 semanas", "flag": "warning", "isPregnant": true, "relationship": "Jefe de Familia", "healthGroup": "Grupo III", "bedNumber": "34", "phone": "0412-1122334", "dni": "28456123", "medicinesNeeded": "Ácido Fólico, Calcio, Multivitamínico" },
+      { "id": "roscio-mem-6-2", "name": "KEIBERTH PAREDES", "age": 4, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Hijo", "healthGroup": "Grupo I", "bedNumber": "35" }
+    ]},
+    { "id": "roscio-fam-7", "name": "Familia Zambrano", "location": "Pabellón B - Aula 2", "obsGeneral": "Jefe de familia: RAMON ZAMBRANO. Adulto Mayor.", "address": "Carlos Soublette, 10 de Marzo", "communityName": "10 de Marzo", "parish": "Carlos Soublette", "housingType": "Edificio / Apartamento", "terrainCondition": "Riesgo Mitigable", "members": [
+      { "id": "roscio-mem-7-1", "name": "RAMON ZAMBRANO", "age": 78, "sex": "M", "pathology": "Cardiopatía Isquémica / HTA", "flag": "danger", "relationship": "Jefe de Familia", "healthGroup": "Grupo IV", "bedNumber": "41", "phone": "0424-6677889", "dni": "3890123", "medicinesNeeded": "Aspirina 81mg, Carvedilol 12.5mg, Losartán 50mg" },
+      { "id": "roscio-mem-7-2", "name": "MARTA DE ZAMBRANO", "age": 74, "sex": "F", "pathology": "Osteoartritis Generalizada", "flag": "warning", "relationship": "Cónyuge", "healthGroup": "Grupo III", "bedNumber": "42", "dni": "4123456" }
+    ]},
+    { "id": "roscio-fam-8", "name": "Familia Ochoa", "location": "Pabellón B - Aula 2", "obsGeneral": "Jefe de familia: NAILET OCHOA.", "address": "Urimare, Playa Grande", "communityName": "Playa Grande", "parish": "Urimare", "housingType": "Casa", "terrainCondition": "Alto Riesgo", "members": [
+      { "id": "roscio-mem-8-1", "name": "NAILET OCHOA", "age": 35, "sex": "F", "pathology": "Ninguna", "flag": "normal", "relationship": "Jefe de Familia", "healthGroup": "Grupo I", "bedNumber": "43", "phone": "0414-3322110", "dni": "20123456" },
+      { "id": "roscio-mem-8-2", "name": "CRISTIAN OCHOA", "age": 16, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Hijo", "healthGroup": "Grupo I", "bedNumber": "44", "dni": "33456789" },
+      { "id": "roscio-mem-8-3", "name": "SEBASTIAN OCHOA", "age": 11, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Hijo", "healthGroup": "Grupo I", "bedNumber": "45" }
+    ]},
+    { "id": "roscio-fam-9", "name": "Familia Chacon", "location": "Pabellón B - Aula 3", "obsGeneral": "Jefe de familia: ENRIQUE CHACON.", "address": "La Guaira, Casco Colonial", "communityName": "Casco Colonial", "parish": "La Guaira", "housingType": "Casa Colonial", "terrainCondition": "Alto Riesgo", "members": [
+      { "id": "roscio-mem-9-1", "name": "ENRIQUE CHACON", "age": 51, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Jefe de Familia", "healthGroup": "Grupo I", "bedNumber": "51", "phone": "0426-9900112", "dni": "13456780" },
+      { "id": "roscio-mem-9-2", "name": "DORIS DE CHACON", "age": 47, "sex": "F", "pathology": "Hipotiroidismo", "flag": "normal", "relationship": "Cónyuge", "healthGroup": "Grupo II", "bedNumber": "52", "dni": "14890123", "medicinesNeeded": "Levotiroxina 100mcg" }
+    ]},
+    { "id": "roscio-fam-10", "name": "Familia Villegas", "location": "Pabellón B - Aula 3", "obsGeneral": "Jefe de familia: KATIUSKA VILLEGAS.", "address": "Maiquetía, Pariata", "communityName": "Pariata", "parish": "Maiquetía", "housingType": "Casa", "terrainCondition": "Alto Riesgo", "members": [
+      { "id": "roscio-mem-10-1", "name": "KATIUSKA VILLEGAS", "age": 29, "sex": "F", "pathology": "Ninguna", "flag": "normal", "relationship": "Jefe de Familia", "healthGroup": "Grupo I", "bedNumber": "53", "phone": "0412-8877665", "dni": "25678901" },
+      { "id": "roscio-mem-10-2", "name": "SANTIAGO VILLEGAS", "age": 7, "sex": "M", "pathology": "Ninguna", "flag": "normal", "relationship": "Hijo", "healthGroup": "Grupo I", "bedNumber": "54" },
+      { "id": "roscio-mem-10-3", "name": "CAMILA VILLEGAS", "age": 3, "sex": "F", "pathology": "Ninguna", "flag": "normal", "relationship": "Hija", "healthGroup": "Grupo I", "bedNumber": "55" }
+    ]}
+  ]
+}

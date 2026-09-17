@@ -1,0 +1,6 @@
+{
+  "name": "Campamentos Transitorios Deportivos",
+  "description": "Sistema oficial del Ministerio del Poder Popular para el Deporte para la gestión integral, censo familiar, perfilamiento deportivo, logística y protección de NNA en campamentos transitorios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
